@@ -63,14 +63,14 @@ jobs:
       if: ${{ !inputs.pushImage }}
       run: |
         cd application
-        docker buildx build --tag codbex-hyperion -o type=image --platform=linux/arm64,linux/amd64 .
+        docker buildx build --tag codbex-iapetus -o type=image --platform=linux/arm64,linux/amd64 .
 
     - name: Build and Push Docker Image
       if: ${{ inputs.pushImage }}
       run: |
         cd application
         docker login ghcr.io -u ${{secrets.DOCKER_USER}} -p ${{secrets.DOCKER_PASSWORD}}
-        docker buildx build --push --tag ghcr.io/codbex/codbex-hyperion:${{ inputs.dockerVersion }} -o type=image --platform=linux/arm64,linux/amd64 .
+        docker buildx build --push --tag ghcr.io/codbex/codbex-iapetus:${{ inputs.dockerVersion }} -o type=image --platform=linux/arm64,linux/amd64 .
 
     - name: Maven Set Snapshot Version
       if: ${{ inputs.snapshotVersion && inputs.releaseVersion}}
@@ -94,6 +94,6 @@ jobs:
         files: |
           LICENSE
         body: |
-          ## codbex Hyperion - ${{ inputs.releaseVersion }}
+          ## codbex Iapetus - ${{ inputs.releaseVersion }}
           JavaScript Edition
 
