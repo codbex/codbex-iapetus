@@ -8,7 +8,7 @@ It is good for exploration the Integration scenarios included the hundreds of av
 
 ```
 docker pull ghcr.io/codbex/codbex-iapetus:latest
-docker run --name codbex-iapetus --rm -p 8080:8080 ghcr.io/codbex/codbex-iapetus:latest
+docker run --name codbex-iapetus --rm -p 80:80 ghcr.io/codbex/codbex-iapetus:latest
 ```
 
 #### Build
@@ -32,11 +32,11 @@ java -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=8000 -jar app
 #### Web
 
 ```
-http://localhost:8080
+http://localhost
 ```
 
 #### REST API
 
 ```
-http://localhost:8080/swagger-ui/index.html
+http://localhost/swagger-ui/index.html
 ```
