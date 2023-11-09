@@ -1,14 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>com.codbex.iapetus</groupId>
-        <artifactId>codbex-iapetus-parent</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
-    </parent>
+	<parent>
+		<groupId>com.codbex.iapetus</groupId>
+		<artifactId>codbex-iapetus-parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
 
 	<name>codbex - iapetus - application</name>
 	<artifactId>codbex-iapetus-application</artifactId>
@@ -17,10 +17,10 @@
 	<dependencies>
 
 		<dependency>
-            <groupId>com.codbex.iapetus</groupId>
-            <artifactId>codbex-iapetus-branding</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
+			<groupId>com.codbex.iapetus</groupId>
+			<artifactId>codbex-iapetus-branding</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
 
 		<!-- Core -->
 		<dependency>
@@ -35,7 +35,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		
+
 		<!-- Security -->
 		<dependency>
 			<groupId>org.eclipse.dirigible</groupId>
@@ -47,7 +47,7 @@
 			<artifactId>dirigible-components-security-keycloak</artifactId>
 			<version>${dirigible.version}</version>
 		</dependency>
-		
+
 		<!-- Data -->
 		<dependency>
 			<groupId>org.eclipse.dirigible</groupId>
@@ -55,7 +55,7 @@
 			<version>${dirigible.version}</version>
 			<type>pom</type>
 		</dependency>
-		
+
 		<!-- Engine -->
 		<dependency>
 			<groupId>org.eclipse.dirigible</groupId>
@@ -68,14 +68,18 @@
 			<artifactId>dirigible-components-engine-camel</artifactId>
 			<version>${dirigible.version}</version>
 			<exclusions>
-        <exclusion>
-            <groupId>javax.validation</groupId>
-            <artifactId>validation-api</artifactId>
-        </exclusion>
-    </exclusions>
+				<exclusion>
+					<groupId>javax.validation</groupId>
+					<artifactId>validation-api</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>javax.servlet</groupId>
+					<artifactId>javax.servlet-api</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
-		
+
 		<!-- API -->
 		<dependency>
 			<groupId>org.eclipse.dirigible</groupId>
@@ -90,7 +94,7 @@
             <version>${dirigible.version}</version>
         </dependency>
     	-->
-		
+
 		<!-- Resources -->
 		<dependency>
 			<groupId>org.eclipse.dirigible</groupId>
@@ -98,7 +102,7 @@
 			<version>${dirigible.version}</version>
 			<type>pom</type>
 		</dependency>
-		
+
 		<!-- IDE -->
 		<dependency>
 			<groupId>org.eclipse.dirigible</groupId>
@@ -120,7 +124,7 @@
 			<artifactId>dirigible-components-ide-template</artifactId>
 			<version>${dirigible.version}</version>
 		</dependency>
-		
+
 		<!-- IDE UI -->
 		<dependency>
 			<groupId>org.eclipse.dirigible</groupId>
@@ -307,7 +311,7 @@
 			<artifactId>dirigible-components-ide-ui-integrations</artifactId>
 			<version>${dirigible.version}</version>
 		</dependency>
-		
+
 		<!-- Templates -->
 		<dependency>
 			<groupId>org.eclipse.dirigible</groupId>
@@ -375,6 +379,22 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>pl.project13.maven</groupId>
+				<artifactId>git-commit-id-plugin</artifactId>
+				<version>${git-commit-id-plugin.version}</version>
+				<executions>
+					<execution>
+						<id>get-the-git-infos</id>
+						<goals>
+							<goal>revision</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<dotGitDirectory>../.git</dotGitDirectory>
+				</configuration>
+			</plugin>
 		</plugins>
 		<resources>
 			<resource>
@@ -384,8 +404,8 @@
 		</resources>
 	</build>
 
-    <properties>
-        <license.header.location>../licensing-header.txt</license.header.location>
-    </properties>
+	<properties>
+		<license.header.location>../licensing-header.txt</license.header.location>
+	</properties>
 
 </project>
