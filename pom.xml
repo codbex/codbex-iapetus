@@ -308,7 +308,7 @@
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <dirigible.version>10.0.3</dirigible.version>
+        <dirigible.version>10.1.0</dirigible.version>
 
         <java.version>17</java.version>
         <maven.compiler.source>17</maven.compiler.source>
@@ -316,8 +316,9 @@
         <maven.resource.plugin.version>3.3.0</maven.resource.plugin.version>
         <maven.clean.plugin.version>3.2.0</maven.clean.plugin.version>
         <maven.clean.plugin.directory>src/main/resources/META-INF/dirigible</maven.clean.plugin.directory>
-        <maven.compiler.plugin.version>3.12.1</maven.compiler.plugin.version>
+        <maven.compiler.plugin.version>3.13.0</maven.compiler.plugin.version>
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+        <maven-failsafe-plugin.version>3.2.5</maven-failsafe-plugin.version>
         <maven.scm.plugin.version>1.13.0</maven.scm.plugin.version>
         <scmVersionType>branch</scmVersionType>
         <commons.io>2.11.0</commons.io>
@@ -381,7 +382,7 @@
         <exec.maven.plugin>3.0.0</exec.maven.plugin>
 
         <spring-context-support.version>5.3.24</spring-context-support.version>
-        <webjars-locator>0.50</webjars-locator>
+        <webjars-locator>0.52</webjars-locator>
 
         <keycloak-adapter-bom.version>20.0.2</keycloak-adapter-bom.version>
         <hikaricp.version>5.0.1</hikaricp.version>
@@ -407,7 +408,7 @@
         <jacoco.version>0.8.11</jacoco.version>
 
         <jakarta.validation.version>3.0.2</jakarta.validation.version>
-        <org.springdoc.openapi.ui.version>1.7.0</org.springdoc.openapi.ui.version>
+        <org.springdoc.openapi.ui.version>1.8.0</org.springdoc.openapi.ui.version>
         <swagger-annotations.version>1.6.9</swagger-annotations.version>
 
         <profile.content.phase>none</profile.content.phase>
