@@ -78,6 +78,47 @@
 			</exclusions>
 		</dependency>
 
+		<dependency>
+			<groupId>org.eclipse.dirigible</groupId>
+			<artifactId>dirigible-components-engine-typescript</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.dirigible</groupId>
+			<artifactId>dirigible-components-engine-template</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.dirigible</groupId>
+			<artifactId>dirigible-components-engine-template-velocity</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.dirigible</groupId>
+			<artifactId>dirigible-components-engine-template-mustache</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.dirigible</groupId>
+			<artifactId>dirigible-components-engine-template-javascript</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.dirigible</groupId>
+			<artifactId>dirigible-components-engine-jobs</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.dirigible</groupId>
+			<artifactId>dirigible-components-engine-listeners</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.dirigible</groupId>
+			<artifactId>dirigible-components-engine-websockets</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.dirigible</groupId>
+			<artifactId>dirigible-components-engine-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.dirigible</groupId>
+			<artifactId>dirigible-components-engine-openapi</artifactId>
+		</dependency>
+
 
 		<!-- API -->
 		<dependency>
@@ -106,9 +147,9 @@
 			<artifactId>dirigible-components-ide-workspace</artifactId>
 		</dependency>
 		<dependency>
-            		<groupId>org.eclipse.dirigible</groupId>
-            		<artifactId>dirigible-components-ide-ui-actions-service</artifactId>
-        	</dependency>
+			<groupId>org.eclipse.dirigible</groupId>
+			<artifactId>dirigible-components-ide-ui-actions-service</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.eclipse.dirigible</groupId>
 			<artifactId>dirigible-components-ide-git</artifactId>
@@ -276,33 +317,33 @@
 			<artifactId>dirigible-components-ide-ui-data-structures</artifactId>
 		</dependency>
 		<dependency>
-            		<groupId>org.eclipse.dirigible</groupId>
-            		<artifactId>dirigible-components-ide-ui-extensions</artifactId>
-        	</dependency>
-        	<dependency>
-            		<groupId>org.eclipse.dirigible</groupId>
-            		<artifactId>dirigible-components-ide-ui-extensions-menu</artifactId>
-        	</dependency>
+			<groupId>org.eclipse.dirigible</groupId>
+			<artifactId>dirigible-components-ide-ui-extensions</artifactId>
+		</dependency>
 		<dependency>
-            		<groupId>org.eclipse.dirigible</groupId>
-            		<artifactId>dirigible-components-ide-ui-jobs</artifactId>
-        	</dependency>
-        	<dependency>
-            		<groupId>org.eclipse.dirigible</groupId>
-            		<artifactId>dirigible-components-ide-ui-jobs-menu</artifactId>
-        	</dependency>
-        	<dependency>
-            		<groupId>org.eclipse.dirigible</groupId>
-            		<artifactId>dirigible-components-ide-ui-listeners</artifactId>
-        	</dependency>
-        	<dependency>
-            		<groupId>org.eclipse.dirigible</groupId>
-            		<artifactId>dirigible-components-ide-ui-listeners-menu</artifactId>
-        	</dependency>
+			<groupId>org.eclipse.dirigible</groupId>
+			<artifactId>dirigible-components-ide-ui-extensions-menu</artifactId>
+		</dependency>
 		<dependency>
-            		<groupId>org.eclipse.dirigible</groupId>
-            		<artifactId>dirigible-components-ide-ui-operations</artifactId>
-        	</dependency>
+			<groupId>org.eclipse.dirigible</groupId>
+			<artifactId>dirigible-components-ide-ui-jobs</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.dirigible</groupId>
+			<artifactId>dirigible-components-ide-ui-jobs-menu</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.dirigible</groupId>
+			<artifactId>dirigible-components-ide-ui-listeners</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.dirigible</groupId>
+			<artifactId>dirigible-components-ide-ui-listeners-menu</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.dirigible</groupId>
+			<artifactId>dirigible-components-ide-ui-operations</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.eclipse.dirigible</groupId>
 			<artifactId>dirigible-components-ide-ui-terminal</artifactId>
@@ -372,7 +413,7 @@
 			<plugin>
 				<groupId>pl.project13.maven</groupId>
 				<artifactId>git-commit-id-plugin</artifactId>
-				<version>${git-commit-id-plugin.version}</version>
+				<version>${maven-git-commit-id-plugin.version}</version>
 				<executions>
 					<execution>
 						<id>get-the-git-infos</id>
