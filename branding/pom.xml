@@ -5,13 +5,13 @@
     <parent>
         <groupId>com.codbex.iapetus</groupId>
         <artifactId>codbex-iapetus-parent</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>0.13.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <name>codbex - iapetus - branding</name>
     <artifactId>codbex-iapetus-branding</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>0.13.0</version>
     <packaging>jar</packaging>
 
     <properties>
