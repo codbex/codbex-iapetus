@@ -15,7 +15,19 @@
 	<packaging>jar</packaging>
 
 	<dependencies>
-
+	        <!-- Database perspective -->
+	        <dependency>
+	            <groupId>org.eclipse.dirigible</groupId>
+	            <artifactId>dirigible-components-ide-ui-database</artifactId>
+	        </dependency>
+	        <dependency>
+	            <groupId>org.eclipse.dirigible</groupId>
+	            <artifactId>dirigible-components-ide-ui-database-menu</artifactId>
+	        </dependency>
+	        <dependency>
+	            <groupId>org.eclipse.dirigible</groupId>
+	            <artifactId>dirigible-components-ide-ui-databases</artifactId>
+	        </dependency>
 		<dependency>
 			<groupId>com.codbex.iapetus</groupId>
 			<artifactId>codbex-iapetus-branding</artifactId>
