@@ -32,6 +32,11 @@
         <module>welcome</module>
     </modules>
 
+    <properties>
+        <project.title>codbex iapetus</project.title>
+        <profile.content.phase>none</profile.content.phase>
+    </properties>
+
     <dependencies>
         <!-- Platform -->
         <dependency>
@@ -142,9 +147,4 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <properties>
-        <project.title>codbex iapetus</project.title>
-        <profile.content.phase>none</profile.content.phase>
-    </properties>
 </project>
