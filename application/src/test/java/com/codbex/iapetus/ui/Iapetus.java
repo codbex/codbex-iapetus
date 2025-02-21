@@ -10,14 +10,19 @@
  */
 package com.codbex.iapetus.ui;
 
+import org.eclipse.dirigible.tests.Workbench;
 import org.eclipse.dirigible.tests.framework.Browser;
 import org.eclipse.dirigible.tests.framework.HtmlAttribute;
 import org.eclipse.dirigible.tests.framework.HtmlElementType;
+import org.eclipse.dirigible.tests.util.SleepUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
+
+import java.util.Collections;
+import java.util.Map;
 
 @Component
 @Lazy
@@ -43,20 +48,71 @@ public class Iapetus {
         this.browser = browser;
     }
 
-    public void openHomePage() {
-        browser.openPath(ROOT_PATH);
-        login();
+    public void assertPublishingProjectMessage(String projectName) {
+        String publishingMessage = "Publishing '/" + projectName + "'...";
+        assertStatusBarMessage(publishingMessage);
     }
 
-    public void login() {
-        String pageTitle = browser.getPageTitle();
-        if (!LOGIN_PAGE_TITLE.equals(pageTitle)) {
-            LOGGER.info("Skipping login");
+    public void assertStatusBarMessage(String expectedMessage) {
+        browser.assertElementExistsByTypeAndText(HtmlElementType.SPAN, expectedMessage);
+    }
+
+    public void assertPublishedProjectMessage(String projectName) {
+        String publishedMessage = "Published '/workspace/" + projectName + "'";
+        assertStatusBarMessage(publishedMessage);
+    }
+
+    public void openHomePage() {
+        browser.openPath(ROOT_PATH);
+        login(false);
+
+        SleepUtil.sleepMillis(500);
+        browser.reload();
+    }
+
+    public void login(boolean forceLogin) {
+        if (!forceLogin && !isLoginPageOpened()) {
+            LOGGER.info("Already logged in");
             return;
         }
         LOGGER.info("Logging...");
         browser.enterTextInElementByAttributePattern(HtmlElementType.INPUT, HtmlAttribute.ID, USERNAME_FIELD_ID, USERNAME);
         browser.enterTextInElementByAttributePattern(HtmlElementType.INPUT, HtmlAttribute.ID, PASSWORD_FIELD_ID, PASSWORD);
         browser.clickOnElementByAttributePatternAndText(HtmlElementType.BUTTON, HtmlAttribute.TYPE, SUBMIT_TYPE, SIGN_IN_BUTTON_TEXT);
+    }
+
+    private boolean isLoginPageOpened() {
+        String pageTitle = browser.getPageTitle();
+        return LOGIN_PAGE_TITLE.equals(pageTitle);
+    }
+//
+//    public void createAndPublishProjectFromResources(String resourcesFolderPath) {
+//        createAndPublishProjectFromResources(resourcesFolderPath, Collections.emptyMap());
+//    }
+
+//    public void createAndPublishProjectFromResources(String resourcesFolderPath, Map<String, String> placeholders) {
+////        projectUtil.copyResourceProjectToUserWorkspace(USERNAME, resourcesFolderPath, placeholders);
+//
+//
+//        Workbench workbench = openWorkbench();
+//        workbench.publishAll();
+//    }
+
+    public Workbench openWorkbench() {
+        openHomePage();
+
+//        browser.clickOnElementById("perspective-workbench");
+        browser.clickOnElementByAttributePattern(HtmlElementType.DIV, HtmlAttribute.ID, "dgProjects");
+
+        return new Workbench(browser);
+    }
+
+
+    public void createNewBlankProject(String projectName) {
+        Workbench workbench = openWorkbench();
+
+        workbench.createNewProject(projectName);
+
+        assertPublishedProjectMessage(projectName);
     }
 }
