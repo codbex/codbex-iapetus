@@ -23,8 +23,8 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableJpaAuditing
 @EnableJpaRepositories
 @SpringBootApplication(scanBasePackages = {"com.codbex.iapetus", "org.eclipse.dirigible.components"},
-    exclude = {DataSourceAutoConfiguration.class, DataSourceTransactionManagerAutoConfiguration.class,
-        HibernateJpaAutoConfiguration.class, JdbcTemplateAutoConfiguration.class})
+        exclude = {DataSourceAutoConfiguration.class, DataSourceTransactionManagerAutoConfiguration.class,
+                HibernateJpaAutoConfiguration.class, JdbcTemplateAutoConfiguration.class})
 @EnableScheduling
 public class IapetusApplication {
 
