@@ -10,7 +10,7 @@ on:
       snapshot-version:
         description: Snapshot Version
         required: true
-        default: 1.0.0-SNAPSHOT
+        default: 2.0.0-SNAPSHOT
 
 run-name: 'version set to ${{ inputs.release-version }} for release'
 
@@ -19,8 +19,10 @@ jobs:
     uses: codbex/codbex-infra/.github/workflows/platform-release.yaml@main
     with:
       platform-name: codbex-iapetus
+      maven-release: true
       release-version: ${{ inputs.release-version }}
       snapshot-version: ${{ inputs.snapshot-version }}
+      docker-release: true
       release-content: |
         ## codbex-iapetus - ${{ inputs.release-version }}
   

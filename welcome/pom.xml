@@ -5,17 +5,12 @@
     <parent>
         <groupId>com.codbex.iapetus</groupId>
         <artifactId>codbex-iapetus-parent</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>2.0.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <name>codbex - iapetus - welcome</name>
     <artifactId>codbex-iapetus-welcome</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-
-    <properties>
-        <license.header.location>../licensing-header.txt</license.header.location>
-    </properties>
 
 </project>
