@@ -1,4 +1,8 @@
-# codbex-iapetus
+# Iapetus by codbex
+
+[![Build Status](https://github.com/codbex/codbex-iapetus/actions/workflows/build.yaml/badge.svg)](https://github.com/codbex/codbex-iapetus/actions/workflows/build.yaml)
+[![Eclipse License](https://img.shields.io/badge/License-EPL%202.0-brightgreen.svg)](https://github.com/codbex/codbex-iapetus/blob/main/LICENSE)
+[![Maven Central](https://img.shields.io/maven-central/v/com.codbex.iapetus/codbex-iapetus-application.svg)](https://central.sonatype.com/namespace/com.codbex.iapetus)
 
 Iapetus Edition provides the Integrations modeling backed by Apache Camel, management and operation components.
 
