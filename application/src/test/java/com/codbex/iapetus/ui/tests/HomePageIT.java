@@ -10,19 +10,14 @@
  */
 package com.codbex.iapetus.ui.tests;
 
-import com.codbex.iapetus.ui.Iapetus;
 import org.eclipse.dirigible.tests.framework.HtmlElementType;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 
-class HomePageIT extends UserInterfaceIntegrationTest {
-
-    @Autowired
-    private Iapetus iapetus;
+class HomePageIT extends IapetusIntegrationTest {
 
     @Test
     void testOpenHomepage() {
-        iapetus.openHomePage();
+        ide.openHomePage();
 
         browser.assertElementExistsByTypeAndText(HtmlElementType.SPAN, "codbex");
         browser.assertElementExistsByTypeAndText(HtmlElementType.HEADER3, "Welcome to Iapetus");
