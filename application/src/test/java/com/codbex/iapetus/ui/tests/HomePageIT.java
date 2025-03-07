@@ -19,7 +19,7 @@ class HomePageIT extends IapetusIntegrationTest {
     void testOpenHomepage() {
         ide.openHomePage();
 
-        browser.assertElementExistsByTypeAndText(HtmlElementType.SPAN, "codbex");
+        browser.assertElementExistsByTypeAndText(HtmlElementType.SPAN, "Iapetus");
         browser.assertElementExistsByTypeAndText(HtmlElementType.HEADER3, "Welcome to Iapetus");
     }
 }
