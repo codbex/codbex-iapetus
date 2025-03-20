@@ -28,8 +28,15 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableScheduling
 public class IapetusApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(IapetusApplication.class, args);
+    private static long startedAt;
+
+    public static long getStartedAt() {
+        return startedAt;
     }
 
+    public static void main(String[] args) {
+        startedAt = System.currentTimeMillis();
+        System.out.println("------- Application is starting -------");
+        SpringApplication.run(IapetusApplication.class, args);
+    }
 }
