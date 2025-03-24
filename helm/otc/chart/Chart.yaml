@@ -1,0 +1,20 @@
+annotations:
+  category: Web IDE
+apiVersion: v2
+name: codbex-iapetus
+version: 3.0.0-SNAPSHOT
+appVersion: 3.0.0-SNAPSHOT
+description: https://codbex.com/products/iapetus
+home: https://github.com/codbex/codbex-iapetus
+keywords:
+  - ETL
+  - low-code-platform
+  - ide
+  - web-ide
+  - type-script
+  - java-script
+maintainers:
+  - name: codbex
+    url: https://github.com/codbex
+sources:
+  - https://github.com/codbex/codbex-iapetus
