@@ -46,9 +46,11 @@ public class DirigibleCommonTestSuiteIT {
     static {
         // TODO: to be removed once https://github.com/eclipse-dirigible/dirigible/pull/5104
         // is released
-        Configuration.browserSize = "1920x1080";
+        //        Configuration.browserSize = "1920x1080";
+        Configuration.browserSize = null;
 
         ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless=new");
         options.addArguments("--window-size=1920,1080");
 
         Configuration.browserCapabilities = options;
