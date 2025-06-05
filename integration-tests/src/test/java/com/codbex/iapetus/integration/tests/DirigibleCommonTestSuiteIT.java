@@ -19,7 +19,6 @@ import org.junit.platform.suite.api.Suite;
 
 @Suite
 @SelectClasses({//
-        TerminalIT.class, //
         CamelCronRouteStarterTemplateIT.class, //
         CamelHttpRouteStarterTemplateIT.class, //
         CamelDirigibleJavaScriptComponentCronRouteIT.class, //
@@ -36,6 +35,7 @@ import org.junit.platform.suite.api.Suite;
         HomepageRedirectIT.class, //
         MailIT.class, //
         MessagingFacadeIT.class, //
+        TerminalIT.class, //
         SecurityIT.class //
 
 })
