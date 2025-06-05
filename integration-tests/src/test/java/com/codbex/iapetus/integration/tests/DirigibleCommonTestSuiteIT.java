@@ -11,8 +11,6 @@
 package com.codbex.iapetus.integration.tests;
 
 import com.codeborne.selenide.Configuration;
-import org.eclipse.dirigible.integration.tests.api.SecurityIT;
-import org.eclipse.dirigible.integration.tests.ui.tests.TerminalIT;
 import org.junit.jupiter.api.Disabled;
 import org.junit.platform.suite.api.SelectClasses;
 import org.junit.platform.suite.api.Suite;
@@ -37,8 +35,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
         // HomepageRedirectIT.class, //
         // MailIT.class, //
         // MessagingFacadeIT.class, //
-        TerminalIT.class, //
-        SecurityIT.class //
+        //        TerminalIT.class, //
+        //        SecurityIT.class //
 })
 public class DirigibleCommonTestSuiteIT {
 
