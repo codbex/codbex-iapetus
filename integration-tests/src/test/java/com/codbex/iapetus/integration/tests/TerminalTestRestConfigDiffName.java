@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @TestConfiguration
-class TerminalTestRestConfig {
+class TerminalTestRestConfigDiffName {
 
     @RestController
     static class TerminalTestRest {

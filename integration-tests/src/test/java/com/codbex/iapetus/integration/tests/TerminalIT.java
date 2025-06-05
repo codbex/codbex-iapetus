@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 import static org.awaitility.Awaitility.await;
 
-@Import(TerminalTestRestConfig.class)
+@Import(TerminalTestRestConfigDiffName.class)
 public class TerminalIT extends IapetusIntegrationTest {
 
     @LocalServerPort
@@ -24,17 +24,17 @@ public class TerminalIT extends IapetusIntegrationTest {
         Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*")
                                                                .addArguments("--window-size=1920,1080");
         Configuration.browserSize = "1920x1080";
-        
+
         Workbench workbench = ide.openWorkbench();
 
         Terminal terminal = workbench.openTerminal();
 
-        String testRest = "http://localhost:" + localServerPort + TerminalTestRestConfig.TerminalTestRest.TEST_PATH;
+        String testRest = "http://localhost:" + localServerPort + TerminalTestRestConfigDiffName.TerminalTestRest.TEST_PATH;
         terminal.enterCommand("wget -qO- " + testRest);
 
         await().pollInterval(1, TimeUnit.SECONDS)
                .atMost(30, TimeUnit.SECONDS)
-               .until(() -> TerminalTestRestConfig.TerminalTestRest.isCalled());
+               .until(() -> TerminalTestRestConfigDiffName.TerminalTestRest.isCalled());
     }
 
 }
