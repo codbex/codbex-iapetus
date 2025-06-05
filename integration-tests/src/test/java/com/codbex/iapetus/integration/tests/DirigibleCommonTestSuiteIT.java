@@ -43,6 +43,8 @@ import org.junit.platform.suite.api.Suite;
 public class DirigibleCommonTestSuiteIT {
 
     static {
+        // TODO: to be removed once https://github.com/eclipse-dirigible/dirigible/pull/5104
+        // is released
         Configuration.browserSize = "1920x1080";
     }
 }
