@@ -10,6 +10,7 @@
  */
 package com.codbex.iapetus.integration.tests;
 
+import com.codeborne.selenide.Configuration;
 import org.eclipse.dirigible.integration.tests.api.SecurityIT;
 import org.eclipse.dirigible.integration.tests.api.java.messaging.MessagingFacadeIT;
 import org.eclipse.dirigible.integration.tests.ui.tests.*;
@@ -40,4 +41,8 @@ import org.junit.platform.suite.api.Suite;
 
 })
 public class DirigibleCommonTestSuiteIT {
+
+    static {
+        Configuration.browserSize = "1920x1080";
+    }
 }
