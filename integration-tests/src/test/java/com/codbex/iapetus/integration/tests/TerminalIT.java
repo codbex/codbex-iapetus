@@ -23,6 +23,7 @@ public class TerminalIT extends IapetusIntegrationTest {
                                                                .addArguments("--no-sandbox")
                                                                .addArguments("--disable-dev-shm-usage");
         //        Configuration.browserSize = "1920x1080";
+        Configuration.browserSize = null;
 
         Workbench workbench = ide.openWorkbench();
 
