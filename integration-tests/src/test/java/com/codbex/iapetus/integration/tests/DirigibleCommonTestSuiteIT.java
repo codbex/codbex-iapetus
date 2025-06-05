@@ -17,6 +17,7 @@ import org.eclipse.dirigible.integration.tests.ui.tests.*;
 import org.eclipse.dirigible.integration.tests.ui.tests.camel.*;
 import org.junit.platform.suite.api.SelectClasses;
 import org.junit.platform.suite.api.Suite;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 @Suite
 @SelectClasses({//
@@ -46,5 +47,10 @@ public class DirigibleCommonTestSuiteIT {
         // TODO: to be removed once https://github.com/eclipse-dirigible/dirigible/pull/5104
         // is released
         Configuration.browserSize = "1920x1080";
+
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--window-size=1920,1080");
+
+        Configuration.browserCapabilities = options;
     }
 }
