@@ -19,6 +19,7 @@ import org.junit.platform.suite.api.Suite;
 
 @Suite
 @SelectClasses({//
+        TerminalIT.class,//
         CamelCronRouteStarterTemplateIT.class, //
         CamelHttpRouteStarterTemplateIT.class, //
         CamelDirigibleJavaScriptComponentCronRouteIT.class, //
@@ -35,8 +36,8 @@ import org.junit.platform.suite.api.Suite;
         HomepageRedirectIT.class, //
         MailIT.class, //
         MessagingFacadeIT.class, //
-        SecurityIT.class, //
-        TerminalIT.class//
+        SecurityIT.class //
+
 })
 public class DirigibleCommonTestSuiteIT {
 }
