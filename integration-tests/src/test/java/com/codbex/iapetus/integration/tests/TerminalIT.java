@@ -18,7 +18,6 @@ public class TerminalIT extends IapetusIntegrationTest {
         Configuration.browserSize = "1920x1080"; // now this will work
 
         Workbench workbench = ide.openWorkbench();
-
         workbench.openTerminal();
     }
 
