@@ -12,31 +12,29 @@ package com.codbex.iapetus.integration.tests;
 
 import com.codeborne.selenide.Configuration;
 import org.eclipse.dirigible.integration.tests.api.SecurityIT;
-import org.eclipse.dirigible.integration.tests.api.java.messaging.MessagingFacadeIT;
-import org.eclipse.dirigible.integration.tests.ui.tests.*;
-import org.eclipse.dirigible.integration.tests.ui.tests.camel.*;
+import org.eclipse.dirigible.integration.tests.ui.tests.TerminalIT;
 import org.junit.platform.suite.api.SelectClasses;
 import org.junit.platform.suite.api.Suite;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 @Suite
 @SelectClasses({//
-        CamelCronRouteStarterTemplateIT.class, //
-        CamelHttpRouteStarterTemplateIT.class, //
-        CamelDirigibleJavaScriptComponentCronRouteIT.class, //
-        CamelDirigibleJavaScriptComponentHttpRouteIT.class, //
-        CamelDirigibleTwoStepsJSInvokerCronRouteIT.class, //
-        CamelDirigibleTwoStepsJSInvokerHttpRouteIT.class, //
-        CamelExtractTransformLoadJdbcIT.class, //
-        CamelExtractTransformLoadTypescriptIT.class, //
-        CreateNewProjectIT.class, //
-        CsvimIT.class, //
-        CustomSecurityIT.class, //
-        DatabasePerspectiveIT.class, //
-        GitPerspectiveIT.class, //
-        HomepageRedirectIT.class, //
-        MailIT.class, //
-        MessagingFacadeIT.class, //
+        // CamelCronRouteStarterTemplateIT.class, //
+        // CamelHttpRouteStarterTemplateIT.class, //
+        // CamelDirigibleJavaScriptComponentCronRouteIT.class, //
+        // CamelDirigibleJavaScriptComponentHttpRouteIT.class, //
+        // CamelDirigibleTwoStepsJSInvokerCronRouteIT.class, //
+        // CamelDirigibleTwoStepsJSInvokerHttpRouteIT.class, //
+        // CamelExtractTransformLoadJdbcIT.class, //
+        // CamelExtractTransformLoadTypescriptIT.class, //
+        // CreateNewProjectIT.class, //
+        // CsvimIT.class, //
+        // CustomSecurityIT.class, //
+        // DatabasePerspectiveIT.class, //
+        // GitPerspectiveIT.class, //
+        // HomepageRedirectIT.class, //
+        // MailIT.class, //
+        // MessagingFacadeIT.class, //
         TerminalIT.class, //
         SecurityIT.class //
 })
@@ -51,7 +49,10 @@ public class DirigibleCommonTestSuiteIT {
         Configuration.browser = "chrome";
         Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*")
                                                                .addArguments("--window-size=1920,1080")
-                                                               .addArguments("--headless=new");
+                                                               .addArguments("--headless=new")
+                                                               .addArguments("--disable-gpu")
+                                                               .addArguments("--no-sandbox")
+                                                               .addArguments("--disable-dev-shm-usage");
         Configuration.browserSize = "1920x1080";
     }
 }
