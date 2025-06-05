@@ -1,7 +1,6 @@
 package com.codbex.iapetus.integration.tests;
 
 import com.codeborne.selenide.Configuration;
-import org.eclipse.dirigible.tests.framework.ide.Terminal;
 import org.eclipse.dirigible.tests.framework.ide.Workbench;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -26,14 +25,7 @@ public class TerminalIT extends IapetusIntegrationTest {
 
         Workbench workbench = ide.openWorkbench();
 
-        Terminal terminal = workbench.openTerminal();
-
-        //        String testRest = "http://localhost:" + localServerPort + TerminalTestRestConfigDiffName.TerminalTestRestDiffName.TEST_PATH;
-        //        terminal.enterCommand("wget -qO- " + testRest);
-        //
-        //        await().pollInterval(1, TimeUnit.SECONDS)
-        //               .atMost(30, TimeUnit.SECONDS)
-        //               .until(() -> TerminalTestRestConfigDiffName.TerminalTestRestDiffName.isCalled());
+        workbench.openTerminal();
     }
 
 }
