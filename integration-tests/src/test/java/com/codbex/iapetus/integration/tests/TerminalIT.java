@@ -15,13 +15,14 @@ public class TerminalIT extends IapetusIntegrationTest {
     @Test
     void testTerminalWorks() {
         Configuration.browser = "chrome";
-        Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*")
-                                                               .addArguments("--window-size=1920,1080")
-                                                               .addArguments("--headless=new")
-                                                               .addArguments("--disable-gpu")
-                                                               .addArguments("--no-sandbox")
-                                                               .addArguments("--disable-dev-shm-usage");
-        Configuration.browserSize = "1920x1080";
+        Configuration.browserSize = null;
+
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless=new"); // or just --headless
+        options.addArguments("--window-size=1920,1080");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--disable-gpu");
 
         Workbench workbench = ide.openWorkbench();
 
