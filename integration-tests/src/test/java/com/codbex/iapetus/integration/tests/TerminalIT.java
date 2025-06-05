@@ -17,7 +17,11 @@ public class TerminalIT extends IapetusIntegrationTest {
     void testTerminalWorks() {
         Configuration.browser = "chrome";
         Configuration.browserCapabilities = new ChromeOptions().addArguments("--remote-allow-origins=*")
-                                                               .addArguments("--window-size=1920,1080");
+                                                               .addArguments("--window-size=1920,1080")
+                                                               .addArguments("--headless=new")
+                                                               .addArguments("--disable-gpu")
+                                                               .addArguments("--no-sandbox")
+                                                               .addArguments("--disable-dev-shm-usage");
         Configuration.browserSize = "1920x1080";
 
         Workbench workbench = ide.openWorkbench();
