@@ -32,10 +32,10 @@ import org.openqa.selenium.chrome.ChromeOptions;
         // DatabasePerspectiveIT.class, //
         // GitPerspectiveIT.class, //
         HomepageRedirectIT.class, //
-        // MailIT.class, //
-        // MessagingFacadeIT.class, //
-        //        TerminalIT.class, //
-        //        SecurityIT.class //
+// MailIT.class, //
+// MessagingFacadeIT.class, //
+// TerminalIT.class, //
+// SecurityIT.class //
 })
 public class DirigibleCommonTestSuiteIT {
 

@@ -4,7 +4,7 @@ import org.eclipse.dirigible.tests.framework.ide.Workbench;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.web.server.LocalServerPort;
 
-//@Import(TerminalTestRestConfigDiffName.class)
+// @Import(TerminalTestRestConfigDiffName.class)
 public class TerminalIT extends IapetusIntegrationTest {
 
     @LocalServerPort
