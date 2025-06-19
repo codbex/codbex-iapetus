@@ -159,4 +159,3 @@ mvn verify -P format
 ```
 http://localhost/swagger-ui/index.html
 ```
-

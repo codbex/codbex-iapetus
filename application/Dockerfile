@@ -15,4 +15,3 @@ RUN apk --no-cache add msttcorefonts-installer fontconfig && update-ms-fonts && 
 COPY target/codbex-iapetus-[0-9]*.jar codbex-iapetus.jar
 ENTRYPOINT ["java", "--add-opens", "java.base/java.lang=ALL-UNNAMED", "--add-opens", "java.base/java.lang.reflect=ALL-UNNAMED", "--add-opens", "java.base/java.nio=ALL-UNNAMED", "-jar", "/codbex-iapetus.jar"]
 EXPOSE 80 8081
-
