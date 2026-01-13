@@ -5,10 +5,10 @@
     <parent>
         <groupId>com.codbex.platform</groupId>
         <artifactId>codbex-platform-parent</artifactId>
-        <version>12.31.0</version>
+        <version>12.56.0</version>
     </parent>
 
-    <name>codbex - iapetus - parent</name>
+    <name>codbex-iapetus-parent</name>
     <description>codbex iapetus</description>
     <groupId>com.codbex.iapetus</groupId>
     <artifactId>codbex-iapetus-parent</artifactId>
