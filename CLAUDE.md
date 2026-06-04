@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-Iapetus is one of the [codbex products](https://www.codbex.com/products/): **"Integrations Management for ETL and other enterprise integration patterns based on Apache Camel"** — providing an Integrations Modeler and Integrations Flows over hundreds of available adapters. Each codbex product (Atlas, Helios, Hades, Oceanus, Hyperion, Iapetus, Rhea, Kronos, Phoebe) is a focused **edition** assembled from a shared component platform; Iapetus is the integration-focused one.
+Iapetus is a [codbex product](https://www.codbex.com/products/): **"Integrations Management for ETL and other enterprise integration patterns based on Apache Camel"** — providing an Integrations Modeler and Integrations Flows over hundreds of available adapters.
 
 Technically, this repo is a thin packaging/assembly layer on top of the [Eclipse Dirigible](https://github.com/eclipse/dirigible) low-code platform. Almost all behavior comes from `org.eclipse.dirigible:dirigible-components-*` dependencies; this repo wires them together (selecting Camel/integration plus IDE and operations components), brands them, and adds a handful of custom UI components. There is very little custom Java here (just the Spring Boot bootstrap class).
 
