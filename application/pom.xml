@@ -18,6 +18,7 @@
         <dependency>
             <groupId>org.eclipse.dirigible</groupId>
             <artifactId>dirigible-components-template-camel</artifactId>
+            <!-- An aggregator: it carries template-camel-cron-route and template-camel-http-route -->
         </dependency>
         <dependency>
             <groupId>org.eclipse.dirigible</groupId>
@@ -98,6 +99,43 @@
             <artifactId>dirigible-components-engine-camel</artifactId>
         </dependency>
 
+        <!--
+            Java support: in-process compilation, entities, the client SDK, language server and debugger.
+            Note: api-modules-java depends on api-bpm, which pulls engine-bpm-flowable in - the client SDK
+            exposes org.eclipse.dirigible.sdk.bpm, so the Java stack cannot ship without the BPM engine.
+            This edition therefore carries the engine but none of the BPM tooling (no BPMN editor, no
+            Processes perspective, no BPM menus or templates). Excluding api-bpm here builds and boots,
+            but leaves sdk.bpm broken the moment client code touches it - not worth the trap.
+        -->
+        <dependency>
+            <groupId>org.eclipse.dirigible</groupId>
+            <artifactId>dirigible-components-engine-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.dirigible</groupId>
+            <artifactId>dirigible-components-data-store-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.dirigible</groupId>
+            <artifactId>dirigible-components-api-modules-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.dirigible</groupId>
+            <artifactId>dirigible-components-ide-java-lsp</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.dirigible</groupId>
+            <artifactId>dirigible-components-ide-java-debug</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.dirigible</groupId>
+            <artifactId>dirigible-components-ui-view-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.dirigible</groupId>
+            <artifactId>dirigible-components-ui-view-java-debug</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.eclipse.dirigible</groupId>
             <artifactId>dirigible-components-engine-typescript</artifactId>
@@ -148,6 +186,16 @@
                 <exclusion>
                     <groupId>org.eclipse.dirigible</groupId>
                     <artifactId>dirigible-components-ui-menu-help</artifactId>
+                </exclusion>
+                <!-- Intent Driven tooling: Iapetus is an integrations edition, it has no intent engine -->
+                <exclusion>
+                    <groupId>org.eclipse.dirigible</groupId>
+                    <artifactId>dirigible-components-resources-builder</artifactId>
+                </exclusion>
+                <!-- BPM task inbox: there is no BPM engine in this edition to back it -->
+                <exclusion>
+                    <groupId>org.eclipse.dirigible</groupId>
+                    <artifactId>dirigible-components-resources-inbox</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
