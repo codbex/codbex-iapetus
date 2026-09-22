@@ -32,7 +32,6 @@ import org.junit.platform.suite.api.Suite;
         CustomSecurityIT.class, //
         DatabasePerspectiveIT.class, //
         GitPerspectiveIT.class, //
-        HomepageRedirectIT.class, //
         MailIT.class, //
         MessagingFacadeIT.class, //
         SecurityIT.class, //

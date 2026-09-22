@@ -8,6 +8,20 @@ Iapetus is a [codbex product](https://www.codbex.com/products/): **"Integrations
 
 Technically, this repo is a thin packaging/assembly layer on top of the [Eclipse Dirigible](https://github.com/eclipse/dirigible) low-code platform. Almost all behavior comes from `org.eclipse.dirigible:dirigible-components-*` dependencies; this repo wires them together (selecting Camel/integration plus IDE and operations components), brands them, and adds a handful of custom UI components. There is very little custom Java here (just the Spring Boot bootstrap class).
 
+**Three deliberate departures from the platform defaults**, all in the edition's own configuration:
+
+- **Camel is the focus.** `engine-camel`, the Integrations (Karavan) modeler, the Camel menu and the `template-camel` aggregator (which carries the cron-route and http-route starters) are in; **no BPM tooling** - no BPMN editor, no Processes perspective, no BPM menus or templates. The Flowable engine itself does arrive on the classpath, because the client Java SDK exposes `org.eclipse.dirigible.sdk.bpm`: `api-modules-java` -> `api-bpm` -> `engine-bpm-flowable`. Excluding `api-bpm` builds and boots but leaves `sdk.bpm` broken the moment client code touches it, so the engine stays and only the tooling is left out.
+- **No Intent Driven tooling.** There is no `engine-intent`, and `resources-builder` (the conversational Builder shell) is excluded from `group-ui`. `resources-inbox` is excluded for the same "nothing backs it" reason - the BPM task inbox has no BPM surface here.
+- **Home is the Workbench IDE.** `DIRIGIBLE_HOME_URL=services/web/shell-ide/` in `dirigible.properties`, overriding the platform's 14.16.0+ default of `services/web/home/`. The launchpad stays reachable at `/services/web/home/`; only the `/` redirect changes. Consequence: upstream's `HomepageRedirectIT` asserts the platform default and cannot run here - it was dropped from the common suite, and the edition's own `HomePageIT` (Workbench welcome view on `/`) guards the override.
+
+**Java support is full**: `engine-java` (in-process `javac` + the bean container), `data-store-java` (Java `@Entity` -> Hibernate), the `api-modules-java` SDK, `ide-java-lsp` (JDT.LS), `ide-java-debug` (the DAP bridge) and the Java / Java Debug views.
+
+## Dirigible version
+
+The version is pinned by `codbex-platform-parent` through its `dirigible.version` property; parent releases track Dirigible releases 1:1 (parent 14.17.0 -> Dirigible 14.17.0), so bumping the edition means bumping the parent. Bumps are not mechanical - Dirigible removes things: the OData engine was extracted in 14.16.0 (un-managing `com.codbex.olingo:olingo-odata2-lib`, which fails a version-less declaration at model-read time) and the AngularJS/TypeScript application templates went with it.
+
+**The UI overrides under `components/ui/` are forks of upstream files** - diff them against the matching Dirigible module on every bump; they drift silently (translations must live in `i18n/<locale>/*.json`, the only folder `platform-core/extension-services/locales.js` scans).
+
 ## Module layout
 
 Maven multi-module reactor (parent `pom.xml`, packaging `pom`):
