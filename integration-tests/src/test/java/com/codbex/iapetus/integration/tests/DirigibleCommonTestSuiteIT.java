@@ -11,6 +11,7 @@
 package com.codbex.iapetus.integration.tests;
 
 import org.eclipse.dirigible.integration.tests.api.SecurityIT;
+import org.eclipse.dirigible.integration.tests.api.camel.*;
 import org.eclipse.dirigible.integration.tests.api.java.messaging.MessagingFacadeIT;
 import org.eclipse.dirigible.integration.tests.ui.tests.*;
 import org.eclipse.dirigible.integration.tests.ui.tests.camel.*;
