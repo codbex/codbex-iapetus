@@ -27,7 +27,7 @@ The version is pinned by `codbex-platform-parent` through its `dirigible.version
 Maven multi-module reactor (parent `pom.xml`, packaging `pom`):
 
 - **`application/`** — the deployable Spring Boot app (`codbex-iapetus-application`). Its `pom.xml` is the real assembly: it selects which Dirigible component groups/modules are bundled (core, security providers, engines incl. `dirigible-components-engine-camel`, IDE backend/UI, editors, perspectives, views, templates). The entrypoint is `IapetusApplication.java`. Contains the `Dockerfile`.
-- **`components/`** — custom Dirigible content modules (`ui/menu-help`, `ui/view-welcome`). These are **not Java** — they are Dirigible artifacts (`.extension`, `.js`, `.html`, `project.json`) under `src/main/resources/META-INF/dirigible/<name>/`, packaged as jars and contributed to the runtime classpath.
+- **`components/`** — custom Dirigible content modules (`ui/menu-help`, `ui/view-welcome`). These are **not Java** — they are Dirigible artifacts (`.extension`, `.json` modules, browser `.js`, `.html`, `project.json`) under `src/main/resources/META-INF/dirigible/<name>/`, packaged as jars and contributed to the runtime classpath.
 - **`branding/`** — logo, favicon, branding `project.json` (also Dirigible content, no Java).
 - **`integration-tests/`** — Selenium/UI + API integration tests. The custom test classes here mostly *select* and run suites of tests that live in upstream Dirigible (`org.eclipse.dirigible.integration.tests.*`). See `DirigibleCommonTestSuiteIT`.
 
